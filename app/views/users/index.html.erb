@@ -40,25 +40,8 @@
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
-  <div id="map2" style='width: 800px; height: 400px;'></div>
 </div>
-
 <script type="text/javascript">
-  function draw(hash){
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(hash);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
-  }
+  
   draw(<%=raw @hash.to_json %>);
-  // function draw2(hashie){
-  // handler2 = Gmaps.build('Google');
-  // handler2.buildMap({ provider: {}, internal: {id: 'map2'}}, function(){
-  //   markers2 = handler2.addMarkers(hashie);
-  //   handler2.bounds.extendWith(markers2);
-  //   handler2.fitMapToBounds();
-  // });
-  // }
 </script>
