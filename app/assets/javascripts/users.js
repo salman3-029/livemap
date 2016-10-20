@@ -12,7 +12,7 @@ function draw(hash){
   });
   }
 
-  function redraw(hash){
-  	handler.removeMarkers(markers);
-  	handler.addMarkers(hash);
-  }
+function redraw(hash){
+	handler.removeMarkers(markers);
+	handler.addMarkers(hash);
+}
