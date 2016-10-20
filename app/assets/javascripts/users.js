@@ -5,14 +5,14 @@ $( document ).ready(function() {
 
 	// Initialize Firebase
 	var config = {
-	  apiKey: "AIzaSyARQoO1-rO1IrXhQ7x9tF8K2xUvQRIFzLw",
-	  authDomain: "livemap-8212d.firebaseapp.com",
-	  databaseURL: "https://livemap-8212d.firebaseio.com",
-	  storageBucket: "livemap-8212d.appspot.com",
-	  messagingSenderId: "662876714740"
+	  apiKey: "AIzaSyCDLaUKEkG3T0MCzjEVwS6RTNAGrzuLX34",
+	  authDomain: "delivodriver.firebaseapp.com",
+	  databaseURL: "https://delivodriver.firebaseio.com",
+	  storageBucket: "delivodriver.appspot.com",
+	  messagingSenderId: "15367859857"
 	};
 	firebase.initializeApp(config);
-	var dbRef =  firebase.database().ref().child('text');
+	var dbRef =  firebase.database().ref().child('AgentsLocation');
 
 	var handler;
 	var markers;
