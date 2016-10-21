@@ -20,15 +20,10 @@ $( document ).ready(function() {
 	function redraw(hash){
 		handler.removeMarkers(markers);
 		//console.log(markers);
+
 		markers = handler.addMarkers(hash);
 	}
 
-	function live(){
-		dbRef.on('value', function(snapshot){
-		redraw(snapshot.val());
-		console.log(snapshot.val());
-		});
-	}
 		
 	function draw(hash){
 	  handler = Gmaps.build('Google');
@@ -37,14 +32,13 @@ $( document ).ready(function() {
 	    handler.bounds.extendWith(markers);
 	    handler.fitMapToBounds();
 	  });
-	  live();
 	}
-
-	dbRef.once('value', function(snapshot){
-		draw(snapshot.val());
-	});
-
 	
-
+	dbRef.on('value', function(snapshot){
+		if(markers == undefined)
+			draw(snapshot.val());
+		else
+			redraw(snapshot.val());
+	});
 	
 });
